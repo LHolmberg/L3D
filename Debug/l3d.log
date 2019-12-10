@@ -1,44 +1,11 @@
-﻿  Ai.cpp
-  math.cpp
-C:\Users\Lukaz\Documents\GitHub\NewEngine\engine\math.h(28,20): warning C4244:  '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\NewEngine\engine\math.cpp(60,14): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\NewEngine\engine\math.cpp(70,19): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\NewEngine\engine\math.cpp(75,12): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\NewEngine\engine\math.cpp(119,19): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\NewEngine\engine\math.cpp(119,7): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\NewEngine\engine\math.cpp(118,18): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\NewEngine\engine\math.cpp(118,10): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\NewEngine\engine\math.cpp(129,18): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\NewEngine\engine\math.cpp(129,7): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\NewEngine\engine\math.cpp(127,15): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\NewEngine\engine\math.cpp(127,7): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\NewEngine\engine\math.cpp(138,16): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\NewEngine\engine\math.cpp(138,4): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\NewEngine\engine\math.cpp(137,15): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-  Source.cpp
-  Shader.cpp
-C:\Users\Lukaz\Documents\GitHub\NewEngine\engine\math.cpp(137,7): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\NewEngine\engine\Shader.cpp(53,69): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\NewEngine\engine\Shader.cpp(53,45): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
-  User.cpp
-C:\Users\Lukaz\Documents\GitHub\NewEngine\engine\Shader.cpp(42,16): warning C4101:  'model': unreferenced local variable
-C:\Users\Lukaz\Documents\GitHub\NewEngine\engine\User.cpp(89,16): warning C4244:  'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\NewEngine\engine\User.cpp(164,32): warning C4244:  '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\NewEngine\engine\User.cpp(204,22): warning C4244:  '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\NewEngine\engine\User.cpp(205,22): warning C4244:  '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\NewEngine\engine\User.cpp(209,16): warning C4244:  'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\NewEngine\engine\User.cpp(210,16): warning C4244:  'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\NewEngine\engine\User.cpp(212,21): warning C4244:  '=': conversion from 'double' to 'float', possible loss of data
-  Random.cpp
-  Generating Code...
-C:\Users\Lukaz\Documents\GitHub\NewEngine\engine\User.cpp(213,21): warning C4244:  '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\NewEngine\engine\User.cpp(42): warning C4715:  'User::Startup': not all control paths return a value
-  stb_image_aug.c
-C:\Users\Lukaz\Documents\GitHub\NewEngine\engine\external\SOIL\stbi_DDS_aug_c.h(362,19): warning C4018:  '>': signed/unsigned mismatch
-C:\Users\Lukaz\Documents\GitHub\NewEngine\engine\external\SOIL\stbi_DDS_aug_c.h(366,19): warning C4018:  '>': signed/unsigned mismatch
-C:\Users\Lukaz\Documents\GitHub\NewEngine\engine\external\SOIL\stbi_DDS_aug_c.h(390,19): warning C4018:  '<': signed/unsigned mismatch
-C:\Users\Lukaz\Documents\GitHub\NewEngine\engine\external\SOIL\stbi_DDS_aug_c.h(427,19): warning C4018:  '<': signed/unsigned mismatch
-soil.lib(image_DXT.obj) : warning LNK4099: PDB 'SOIL.pdb' was not found with 'soil.lib(image_DXT.obj)' or at 'C:\Users\Lukaz\Documents\GitHub\NewEngine\Debug\SOIL.pdb'; linking object as if no debug info
-soil.lib(image_helper.obj) : warning LNK4099: PDB 'SOIL.pdb' was not found with 'soil.lib(image_helper.obj)' or at 'C:\Users\Lukaz\Documents\GitHub\NewEngine\Debug\SOIL.pdb'; linking object as if no debug info
-soil.lib(SOIL.obj) : warning LNK4099: PDB 'SOIL.pdb' was not found with 'soil.lib(SOIL.obj)' or at 'C:\Users\Lukaz\Documents\GitHub\NewEngine\Debug\SOIL.pdb'; linking object as if no debug info
-  l3d.vcxproj -> C:\Users\Lukaz\Documents\GitHub\NewEngine\Debug\l3d.exe
+﻿  User.cpp
+C:\Users\Lukaz\Documents\GitHub\L3D\engine\User.cpp(90,16): warning C4244:  'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Lukaz\Documents\GitHub\L3D\engine\User.cpp(172,32): warning C4244:  '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Lukaz\Documents\GitHub\L3D\engine\User.cpp(211,22): warning C4244:  '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Lukaz\Documents\GitHub\L3D\engine\User.cpp(212,22): warning C4244:  '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Lukaz\Documents\GitHub\L3D\engine\User.cpp(216,16): warning C4244:  'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Lukaz\Documents\GitHub\L3D\engine\User.cpp(217,16): warning C4244:  'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Lukaz\Documents\GitHub\L3D\engine\User.cpp(219,21): warning C4244:  '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Lukaz\Documents\GitHub\L3D\engine\User.cpp(220,21): warning C4244:  '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Lukaz\Documents\GitHub\L3D\engine\User.cpp(42): warning C4715:  'User::Startup': not all control paths return a value
+  l3d.vcxproj -> C:\Users\Lukaz\Documents\GitHub\L3D\Debug\l3d.exe

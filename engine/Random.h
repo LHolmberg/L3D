@@ -5,7 +5,7 @@
 class Random
 {
 public:
-	std::random_device dev;
+	std::random_device d;
 
 	int Range(int x, int y);
 };

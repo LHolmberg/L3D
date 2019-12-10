@@ -84,40 +84,47 @@ bool User::CheckCollision(Math::Vector3 a, Math::Vector3 b, Math::Vector3 scale)
 	return false;
 }
 
+
 void User::MoveKeyboard()
 {
 	float curTime = glfwGetTime();
 	dt = curTime - lastTime;
-	lastTime = curTime;
+	
 	float velocity = 20 * dt;
-
+	float newVel = UpdateSpeed(20) * dt;
+	lastTime = curTime;
 	if (glfwGetKey(glfwGetCurrentContext(), GLFW_KEY_W) == 1)
 	{
 		if (collided == true && mF == true && onTop == false) //temp collision
 		{
-			pPos.x -= lForward.x * velocity;
-			pPos.z -= lForward.z * velocity;
+			pPos.x -= lForward.x * newVel;
+			pPos.z -= lForward.z * newVel;
 		}
 		mF = true;
-		pPos.x += lForward.x * velocity;
-		pPos.z += lForward.z * velocity;
+		pPos.x += lForward.x * newVel;
+		pPos.z += lForward.z * newVel;
+
+
 	}
 	else
 		mF = false;
+	core::log(abs(pitch));
+	core::log(speed);
 	if (glfwGetKey(glfwGetCurrentContext(), GLFW_KEY_S) == 1)
 	{
 		if (collided == true && mB == true && onTop == false)
 		{
-			pPos.x += lForward.x * velocity;
-			pPos.z += lForward.z * velocity;
+			pPos.x += lForward.x * newVel;
+			pPos.z += lForward.z * newVel;
 		}
 		mB = true;
-		pPos.x -= lForward.x * velocity;
-		pPos.z -= lForward.z * velocity;
+		pPos.x -= lForward.x * newVel;
+		pPos.z -= lForward.z * newVel;
 	}
 	else
 		mB = false;
-	
+
+
 	if (glfwGetKey(glfwGetCurrentContext(), GLFW_KEY_A) == 1)
 	{
 		if (collided == true && mL == true && onTop == false)
@@ -125,6 +132,7 @@ void User::MoveKeyboard()
 			pPos.x += right.x * velocity;
 			pPos.z += right.z * velocity;
 		}
+
 		mL = true;
 		pPos.x -= right.x * velocity;
 		pPos.z -= right.z * velocity;
@@ -176,7 +184,6 @@ void User::MoveMouse(float xOffset, float yOffset, bool constraint)
 {
 		xOffset *= sens;
 		yOffset *= sens;
-
 		yaw += xOffset;
 		pitch += yOffset;
 
@@ -233,4 +240,30 @@ void User::UpdateValues()
 
 	right = Math::Normalize(Math::Crossproduct(lForward, worldUp));
 	up = Math::Normalize(Math::Crossproduct(right, lForward));
+}
+
+float User::UpdateSpeed(float speed) //Temporary fix for look down=slowmovement
+{
+	if (abs(pitch) > 48 && abs(pitch) < 57)
+		return speed + 7;
+	else if (abs(pitch) > 57 && abs(pitch) < 65)
+		return speed + 19;
+	else if (abs(pitch) > 65 && abs(pitch) < 70)
+		return speed + 38;
+	else if (abs(pitch) > 70 && abs(pitch) < 75)
+		return speed + 49;
+	else if (abs(pitch) > 75 && abs(pitch) < 80)
+		return speed + 77;
+	else if (abs(pitch) > 80 && abs(pitch) < 83)
+		return speed + 129;
+	else if (abs(pitch) > 83 && abs(pitch) < 85)
+		return speed + 218;
+	else if (abs(pitch) > 85 && abs(pitch) < 87.6f)
+		return speed + 266;
+	else if (abs(pitch) > 87.6f && abs(pitch) < 88.5f)
+		return speed + 280;
+	else if (abs(pitch) > 88.5f)
+		return speed + 970;
+	else
+		return 20;
 }

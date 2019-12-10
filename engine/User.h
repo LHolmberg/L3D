@@ -28,6 +28,7 @@ public:
 
 	//physics
 	bool CheckCollision(Math::Vector3 a, Math::Vector3 b, Math::Vector3 scale);
+	float UpdateSpeed(float speed);
 	bool grounded;
 	int jumpcount = 100;
 	bool isJump = false;
@@ -35,7 +36,9 @@ public:
 	bool mF, mB, mL, mR;
 	bool onTop = false;
 	void CheckForJump();
-	
+	int speed = 20;
+
+
 	//camera
 	Math::Matrix4 GetView();
 	Math::Vector3 pPos = Math::Vector3(0, 250, 0);
