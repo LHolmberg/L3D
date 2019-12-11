@@ -1,11 +1,5 @@
-﻿  User.cpp
-C:\Users\Lukaz\Documents\GitHub\L3D\engine\User.cpp(90,16): warning C4244:  'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\L3D\engine\User.cpp(172,32): warning C4244:  '+=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\L3D\engine\User.cpp(211,22): warning C4244:  '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\L3D\engine\User.cpp(212,22): warning C4244:  '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\L3D\engine\User.cpp(216,16): warning C4244:  'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\L3D\engine\User.cpp(217,16): warning C4244:  'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\L3D\engine\User.cpp(219,21): warning C4244:  '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\L3D\engine\User.cpp(220,21): warning C4244:  '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\L3D\engine\User.cpp(42): warning C4715:  'User::Startup': not all control paths return a value
+﻿  Shader.cpp
+C:\Users\Lukaz\Documents\GitHub\L3D\engine\Shader.cpp(53,69): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Lukaz\Documents\GitHub\L3D\engine\Shader.cpp(53,45): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Lukaz\Documents\GitHub\L3D\engine\Shader.cpp(42,16): warning C4101:  'model': unreferenced local variable
   l3d.vcxproj -> C:\Users\Lukaz\Documents\GitHub\L3D\Debug\l3d.exe

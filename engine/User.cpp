@@ -108,8 +108,6 @@ void User::MoveKeyboard()
 	}
 	else
 		mF = false;
-	core::log(abs(pitch));
-	core::log(speed);
 	if (glfwGetKey(glfwGetCurrentContext(), GLFW_KEY_S) == 1)
 	{
 		if (collided == true && mB == true && onTop == false)

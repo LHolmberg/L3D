@@ -131,7 +131,7 @@ void Shader::Startup()
 
 	cubemapTexture = LoadCubemap(list);
 
-	InitializeCube("engine/shaders/bark.jpg");
+	InitializeCube("engine/shaders/Png.png");
 	InitializeCube("engine/shaders/grass.jpg");
 }
 
