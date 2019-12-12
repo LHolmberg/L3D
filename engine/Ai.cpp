@@ -2,7 +2,6 @@
 
 namespace AI
 {
-
 	int StateMachine::AddState(std::string name, void* func)
 	{
 		if (states.find(name) != states.end())

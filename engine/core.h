@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 
-#define running !glfwWindowShouldClose(usr.window)
+#define running !glfwWindowShouldClose(win.window)
 
 namespace core
 {

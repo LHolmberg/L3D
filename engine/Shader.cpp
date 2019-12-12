@@ -10,12 +10,10 @@ void Shader::InstantiateCube(Math::Vector3 pos, Math::Vector3 scale, unsigned in
 	glBindTexture(GL_TEXTURE_2D, texture);
 	glUniform1i(glGetUniformLocation(cube, "ourTexture1"), 0);
 
-	// Get the uniform locations
 	GLint modelLoc = glGetUniformLocation(cube, "model");
 	GLint viewLoc = glGetUniformLocation(cube, "view");
 	GLint projLoc = glGetUniformLocation(cube, "projection");
 
-	// Pass the matrices to the shader
 	glUniformMatrix4fv(viewLoc, 1, GL_FALSE, viewPtr);
 	glUniformMatrix4fv(projLoc, 1, GL_FALSE, projPtr);
 
@@ -33,12 +31,12 @@ void Shader::InstantiateCube(Math::Vector3 pos, Math::Vector3 scale, unsigned in
 	glBindVertexArray(0);
 }
 
-void Shader::Update(User usr)
+void Shader::Update(Player player)
 {
 
 	//SETUP
 	Math::Matrix4 projection = Math::Perspective(60.0f, (float)WIDTH / HEIGHT, 0.1f, 1000.0f);
-	Math::Matrix4 view = usr.GetView();
+	Math::Matrix4 view = player.GetView();
 	Math::Matrix4 model;
 	void* vPtr = &view;
 	viewPtr = (float*)vPtr;
@@ -55,7 +53,7 @@ void Shader::Update(User usr)
 	glDepthFunc(GL_LEQUAL);
 	glUseProgram(sky);
 
-	view = Math::To3x3((usr.GetView()));
+	view = Math::To3x3((player.GetView()));
 	glUniformMatrix4fv(glGetUniformLocation(sky, "view"), 1, GL_FALSE, viewPtr);
 	glUniformMatrix4fv(glGetUniformLocation(sky, "projection"), 1, GL_FALSE, projPtr);
 	glBindVertexArray(skyVAO);

@@ -1,22 +1,22 @@
 #include "Shader.h"
 
-User usr;
+Window win;
 Shader shader;
 
 int main() 
 {
-	usr.Startup(WIDTH,HEIGHT);
+	win.Startup(WIDTH,HEIGHT);
 	shader.Startup();
 
 	while (running)
 	{
-		usr.Update();
-		shader.Update(usr);
+		win.Update();
+		shader.Update(win);
 
 		glfwPollEvents();
-		usr.MoveKeyboard();
+		win.MoveKeyboard();
 
-		glfwSwapBuffers(usr.window);
+		glfwSwapBuffers(win.window);
 	}
 
 	shader.Shutdown();

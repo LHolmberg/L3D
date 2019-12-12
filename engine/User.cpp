@@ -1,6 +1,7 @@
 #include "User.h"
 
-void User::SetVersion(int v)
+
+void Window::SetVersion(int v)
 {
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, v);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, v);
@@ -8,7 +9,7 @@ void User::SetVersion(int v)
 	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, 1);
 }
 
-int User::Startup(const unsigned int width, const unsigned int height)
+int Window::Startup(const unsigned int width, const unsigned int height)
 {
 	glfwInit();
 
@@ -41,7 +42,7 @@ int User::Startup(const unsigned int width, const unsigned int height)
 	glfwSetWindowUserPointer(window, this);
 }
 
-void User::Update()
+void Window::Update()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -69,7 +70,7 @@ void User::Update()
 	CheckForJump();
 }
 
-bool User::CheckCollision(Math::Vector3 a, Math::Vector3 b, Math::Vector3 scale)
+bool Player::CheckCollision(Math::Vector3 a, Math::Vector3 b, Math::Vector3 scale)
 {
 	if (abs(a.x - b.x) < scale.x)
 	{
@@ -85,7 +86,7 @@ bool User::CheckCollision(Math::Vector3 a, Math::Vector3 b, Math::Vector3 scale)
 }
 
 
-void User::MoveKeyboard()
+void Input::MoveKeyboard()
 {
 	float curTime = glfwGetTime();
 	dt = curTime - lastTime;
@@ -161,7 +162,7 @@ void User::MoveKeyboard()
 	}
 }
 
-void User::CheckForJump()
+void Player::CheckForJump()
 {
 	if (isJump == true) 
 	{
@@ -178,7 +179,7 @@ void User::CheckForJump()
 	}
 }
 
-void User::MoveMouse(float xOffset, float yOffset, bool constraint)
+void Input::MoveMouse(float xOffset, float yOffset, bool constraint)
 {
 		xOffset *= sens;
 		yOffset *= sens;
@@ -201,9 +202,9 @@ void User::MoveMouse(float xOffset, float yOffset, bool constraint)
 		this->UpdateValues();
 }
 
-void User::RegisterMouseM(GLFWwindow* window, double xPos, double yPos)
+void Input::RegisterMouseM(GLFWwindow* window, double xPos, double yPos)
 {
-	User* staticRef = static_cast<User*>(glfwGetWindowUserPointer(window));
+	Input* staticRef = static_cast<Input*>(glfwGetWindowUserPointer(window));
 	if (staticRef->firstMouse)
 	{
 		staticRef->lastX = xPos;
@@ -221,13 +222,13 @@ void User::RegisterMouseM(GLFWwindow* window, double xPos, double yPos)
 }
 
 
-Math::Matrix4 User::GetView()
+Math::Matrix4 Player::GetView()
 {
 	return Math::lookAt(pPos, pPos + lForward, worldUp);
 }
 
 
-void User::UpdateValues()
+void Player::UpdateValues()
 {
 	Math::Vector3 front;
 
@@ -240,7 +241,7 @@ void User::UpdateValues()
 	up = Math::Normalize(Math::Crossproduct(right, lForward));
 }
 
-float User::UpdateSpeed(float speed) //Temporary fix for look down=slowmovement
+float Player::UpdateSpeed(float speed) //Temporary fix for look down=slowmovement
 {
 	if (abs(pitch) > 48 && abs(pitch) < 57)
 		return speed + 7;
@@ -261,7 +262,7 @@ float User::UpdateSpeed(float speed) //Temporary fix for look down=slowmovement
 	else if (abs(pitch) > 87.6f && abs(pitch) < 88.5f)
 		return speed + 280;
 	else if (abs(pitch) > 88.5f)
-		return speed + 970;
+		return speed + 1000;
 	else
 		return 20;
 }

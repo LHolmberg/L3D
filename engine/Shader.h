@@ -1,14 +1,17 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
+
 #include <vector>
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <sstream>
+
 #include "User.h"
 #include "Random.h"
 #include "math.h"
 #include "core.h"
+
 #include "external/SOIL/stb_image_aug.h"
 #include <soil.h>
 
@@ -19,7 +22,7 @@ public:
 	//Shader core
 	void Startup();
 	void Shutdown();
-	void Update(User usr);
+	void Update(Player player);
 	unsigned int CreateShader(std::string vShader, std::string fShader);
 	unsigned int program, sky, cube;
 	unsigned int skyVAO, skyVBO, VAO, VBO;
