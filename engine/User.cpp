@@ -63,9 +63,7 @@ void Window::Update()
 		pPos.y -= 50 * dt;
 	}
 	else
-	{
 		grounded = true;
-	}
 
 	CheckForJump();
 }
@@ -85,6 +83,19 @@ bool Player::CheckCollision(Math::Vector3 a, Math::Vector3 b, Math::Vector3 scal
 	return false;
 }
 
+bool Input::GetKey(KeyCode k)
+{
+	switch (k) 
+	{
+		case KeyCode::W: return glfwGetKey(glfwGetCurrentContext(), GLFW_KEY_W) == 1 ? true : false;
+		case KeyCode::A: return glfwGetKey(glfwGetCurrentContext(), GLFW_KEY_A) == 1 ? true : false;
+		case KeyCode::S: return glfwGetKey(glfwGetCurrentContext(), GLFW_KEY_S) == 1 ? true : false;
+		case KeyCode::D: return glfwGetKey(glfwGetCurrentContext(), GLFW_KEY_D) == 1 ? true : false;
+		case KeyCode::ESCAPE: return glfwGetKey(glfwGetCurrentContext(), GLFW_KEY_ESCAPE) == 1 ? true : false;
+		case KeyCode::SPACE: return glfwGetKey(glfwGetCurrentContext(), GLFW_KEY_SPACE) == 1 ? true : false;
+		default: return false;
+	}
+}
 
 void Input::MoveKeyboard()
 {
@@ -94,7 +105,7 @@ void Input::MoveKeyboard()
 	float velocity = 20 * dt;
 	float newVel = UpdateSpeed(20) * dt;
 	lastTime = curTime;
-	if (glfwGetKey(glfwGetCurrentContext(), GLFW_KEY_W) == 1)
+	if (GetKey(KeyCode::W) == true)
 	{
 		if (collided == true && mF == true && onTop == false) //temp collision
 		{
@@ -104,12 +115,10 @@ void Input::MoveKeyboard()
 		mF = true;
 		pPos.x += lForward.x * newVel;
 		pPos.z += lForward.z * newVel;
-
-
 	}
 	else
 		mF = false;
-	if (glfwGetKey(glfwGetCurrentContext(), GLFW_KEY_S) == 1)
+	if (GetKey(KeyCode::S) == true)
 	{
 		if (collided == true && mB == true && onTop == false)
 		{
@@ -123,8 +132,7 @@ void Input::MoveKeyboard()
 	else
 		mB = false;
 
-
-	if (glfwGetKey(glfwGetCurrentContext(), GLFW_KEY_A) == 1)
+	if (GetKey(KeyCode::A) == true)
 	{
 		if (collided == true && mL == true && onTop == false)
 		{
@@ -138,7 +146,7 @@ void Input::MoveKeyboard()
 	}
 	else 
 		mL = false;
-	if (glfwGetKey(glfwGetCurrentContext(), GLFW_KEY_D) == 1)
+	if (GetKey(KeyCode::D) == true)
 	{
 		if (collided == true && mR == true && onTop == false)
 		{
@@ -151,9 +159,9 @@ void Input::MoveKeyboard()
 	}
 	else
 		mR = false;
-	if (glfwGetKey(glfwGetCurrentContext(), GLFW_KEY_ESCAPE) == 1)
+	if (GetKey(KeyCode::ESCAPE) == true)
 		glfwSetWindowShouldClose(glfwGetCurrentContext(), 1);
-	if (glfwGetKey(glfwGetCurrentContext(), GLFW_KEY_SPACE) == 1)
+	if (GetKey(KeyCode::SPACE) == true)
 	{
 		if (grounded == true)
 		{

@@ -130,6 +130,7 @@ namespace Math
 			0, 0, 0, 1
 		));
 	}
+
 	Matrix4 RotateZ(float t)
 	{
 		return(Matrix4

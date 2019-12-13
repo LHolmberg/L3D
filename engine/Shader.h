@@ -10,7 +10,6 @@
 #include "User.h"
 #include "Random.h"
 #include "math.h"
-#include "core.h"
 
 #include "external/SOIL/stb_image_aug.h"
 #include <soil.h>

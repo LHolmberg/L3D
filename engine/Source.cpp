@@ -1,26 +1,12 @@
-#include "Shader.h"
-
-Window win;
-Shader shader;
+#include "core.h"
 
 int main() 
 {
-	win.Startup(WIDTH,HEIGHT);
-	shader.Startup();
-
+	core::Startup();
 	while (running)
 	{
-		win.Update();
-		shader.Update(win);
-
-		glfwPollEvents();
-		win.MoveKeyboard();
-
-		glfwSwapBuffers(win.window);
+		core::Update();
 	}
-
-	shader.Shutdown();
-	glfwTerminate();
-
+	core::Shutdown();
 	return 0;
 }

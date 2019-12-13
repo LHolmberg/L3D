@@ -5,7 +5,6 @@
 #include <string>
 
 #include "math.h"
-#include "core.h"
 
 #define WIDTH 1600
 #define HEIGHT 900
@@ -38,6 +37,8 @@ public:
 class Input : public Player
 {
 public:
+	enum class KeyCode { W, A, S, D, SPACE, ESCAPE};
+	bool GetKey(KeyCode k);
 	static void RegisterMouseM(GLFWwindow* window, double xPos, double yPos);
 	void MoveKeyboard();
 	void MoveMouse(float xOffset, float yOffset, bool constraint = true);
