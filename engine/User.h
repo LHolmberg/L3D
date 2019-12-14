@@ -24,7 +24,7 @@ public:
 
 	//camera
 	Math::Matrix4 GetView();
-	Math::Vector3 pPos = Math::Vector3(0, 250, 0);
+	Math::Vector3 position = Math::Vector3(0, 250, 0);
 	Math::Vector3 worldUp = Math::Vector3(0, 1, 0);
 	Math::Vector3 lForward;
 	Math::Vector3 up = Math::Vector3(0, 1, 0);

@@ -2,20 +2,24 @@
 #include <iostream>
 #include "core.h"
 
-namespace Se
+namespace Game
 {
-	Shader sha;
+	//on update
 	void Update()
 	{
-		sha.InstantiateCube(Math::Vector3(0, -10, 0), Math::Vector3(200, 1, 200), sha.textures[1]);
+
 	}
 
+	//on startup
 	void Startup()
 	{
+
+
+
 	}
 
+	//on exit
 	void Shutdown()
 	{
-		std::cout << "hello";
 	}
 }

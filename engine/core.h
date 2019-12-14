@@ -18,14 +18,14 @@ namespace core
 	{
 		win.Startup(WIDTH, HEIGHT);
 		shader.Startup();
-		Se::Startup();
+		Game::Startup();
 	}
 
 	void Update()
 	{
 		win.Update();
 		shader.Update(win);
-		Se::Update();
+		Game::Update();
 		glfwPollEvents();
 		win.MoveKeyboard();
 
@@ -35,7 +35,7 @@ namespace core
 	void Shutdown()
 	{
 		shader.Shutdown();
-		Se::Shutdown();
+		Game::Shutdown();
 		glfwTerminate();
 	}
 }

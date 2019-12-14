@@ -1,7 +1,5 @@
 ﻿  Source.cpp
-  Shader.cpp
-C:\Users\Lukaz\Documents\GitHub\L3D\engine\Shader.cpp(53,69): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\L3D\engine\Shader.cpp(53,45): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
-  Generating Code...
-C:\Users\Lukaz\Documents\GitHub\L3D\engine\Shader.cpp(42,16): warning C4101:  'model': unreferenced local variable
+soil.lib(image_DXT.obj) : warning LNK4099: PDB 'SOIL.pdb' was not found with 'soil.lib(image_DXT.obj)' or at 'C:\Users\Lukaz\Documents\GitHub\L3D\Debug\SOIL.pdb'; linking object as if no debug info
+soil.lib(image_helper.obj) : warning LNK4099: PDB 'SOIL.pdb' was not found with 'soil.lib(image_helper.obj)' or at 'C:\Users\Lukaz\Documents\GitHub\L3D\Debug\SOIL.pdb'; linking object as if no debug info
+soil.lib(SOIL.obj) : warning LNK4099: PDB 'SOIL.pdb' was not found with 'soil.lib(SOIL.obj)' or at 'C:\Users\Lukaz\Documents\GitHub\L3D\Debug\SOIL.pdb'; linking object as if no debug info
   l3d.vcxproj -> C:\Users\Lukaz\Documents\GitHub\L3D\Debug\l3d.exe

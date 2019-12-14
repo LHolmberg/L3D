@@ -70,6 +70,9 @@
     <ClInclude Include="engine\Random.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="engine\TESTSAMPLEFILE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="engine\shaders\bark.jpg">

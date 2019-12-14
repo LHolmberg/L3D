@@ -46,21 +46,21 @@ void Window::Update()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	if (pPos.y > -5)
+	if (position.y > -5)
 		onTop = true;
 	else
 		onTop = false;
 
-	if (CheckCollision(pPos, Math::Vector3(10, -5, 20), Math::Vector3(4, 7, 4)) || CheckCollision(pPos, Math::Vector3(2, -5, 10), Math::Vector3(4, 7, 4)))
+	if (CheckCollision(position, Math::Vector3(10, -5, 20), Math::Vector3(4, 7, 4)) || CheckCollision(position, Math::Vector3(2, -5, 10), Math::Vector3(4, 7, 4)))
 		collided = true;
 	else
 		collided = false;
 
 
-	if (CheckCollision(pPos, Math::Vector3(0, -10, 0), Math::Vector3(100, 5, 100)) != true && collided != true) // Gravity, pull down
+	if (CheckCollision(position, Math::Vector3(0, -10, 0), Math::Vector3(100, 5, 100)) != true && collided != true) // Gravity, pull down
 	{
 		grounded = false;
-		pPos.y -= 50 * dt;
+		position.y -= 50 * dt;
 	}
 	else
 		grounded = true;
@@ -109,12 +109,12 @@ void Input::MoveKeyboard()
 	{
 		if (collided == true && mF == true && onTop == false) //temp collision
 		{
-			pPos.x -= lForward.x * newVel;
-			pPos.z -= lForward.z * newVel;
+			position.x -= lForward.x * newVel;
+			position.z -= lForward.z * newVel;
 		}
 		mF = true;
-		pPos.x += lForward.x * newVel;
-		pPos.z += lForward.z * newVel;
+		position.x += lForward.x * newVel;
+		position.z += lForward.z * newVel;
 	}
 	else
 		mF = false;
@@ -122,12 +122,12 @@ void Input::MoveKeyboard()
 	{
 		if (collided == true && mB == true && onTop == false)
 		{
-			pPos.x += lForward.x * newVel;
-			pPos.z += lForward.z * newVel;
+			position.x += lForward.x * newVel;
+			position.z += lForward.z * newVel;
 		}
 		mB = true;
-		pPos.x -= lForward.x * newVel;
-		pPos.z -= lForward.z * newVel;
+		position.x -= lForward.x * newVel;
+		position.z -= lForward.z * newVel;
 	}
 	else
 		mB = false;
@@ -136,13 +136,13 @@ void Input::MoveKeyboard()
 	{
 		if (collided == true && mL == true && onTop == false)
 		{
-			pPos.x += right.x * velocity;
-			pPos.z += right.z * velocity;
+			position.x += right.x * velocity;
+			position.z += right.z * velocity;
 		}
 
 		mL = true;
-		pPos.x -= right.x * velocity;
-		pPos.z -= right.z * velocity;
+		position.x -= right.x * velocity;
+		position.z -= right.z * velocity;
 	}
 	else 
 		mL = false;
@@ -150,12 +150,12 @@ void Input::MoveKeyboard()
 	{
 		if (collided == true && mR == true && onTop == false)
 		{
-			pPos.x -= right.x * velocity;
-			pPos.z -= right.z * velocity;
+			position.x -= right.x * velocity;
+			position.z -= right.z * velocity;
 		}
 		mR = true;
-		pPos.x += right.x * velocity;
-		pPos.z += right.z * velocity;
+		position.x += right.x * velocity;
+		position.z += right.z * velocity;
 	}
 	else
 		mR = false;
@@ -176,7 +176,7 @@ void Player::CheckForJump()
 	{
 		if (jumpcount >= 0)
 		{
-			pPos.y += (jumpcount) * 0.01;
+			position.y += (jumpcount) * 0.01;
 			jumpcount -= 1;
 		}
 		else 
@@ -232,7 +232,7 @@ void Input::RegisterMouseM(GLFWwindow* window, double xPos, double yPos)
 
 Math::Matrix4 Player::GetView()
 {
-	return Math::lookAt(pPos, pPos + lForward, worldUp);
+	return Math::lookAt(position, position + lForward, worldUp);
 }
 
 

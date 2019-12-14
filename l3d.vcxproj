@@ -153,6 +153,7 @@
     <ClInclude Include="engine\external\SOIL\stb_image_aug.h" />
     <ClInclude Include="engine\math.h" />
     <ClInclude Include="engine\Shader.h" />
+    <ClInclude Include="engine\TESTSAMPLEFILE.h" />
     <ClInclude Include="engine\User.h" />
     <ClInclude Include="engine\Random.h" />
   </ItemGroup>
