@@ -1,2 +1,6 @@
 # 3D Game Engine
-engine
+
+# TODO
+- Render graphics in USERFILE.h
+- Physics engine
+- General code cleanup
