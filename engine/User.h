@@ -21,7 +21,7 @@ public:
 	bool isJump = false, collided;
 	bool mF, mB, mL, mR;
 	bool onTop = false;
-
+	float velocity;
 	//camera
 	Math::Matrix4 GetView();
 	Math::Vector3 position = Math::Vector3(0, 250, 0);

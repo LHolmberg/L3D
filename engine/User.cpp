@@ -102,7 +102,6 @@ void Input::MoveKeyboard()
 	float curTime = glfwGetTime();
 	dt = curTime - lastTime;
 	
-	float velocity = 20 * dt;
 	float newVel = UpdateSpeed(20) * dt;
 	lastTime = curTime;
 	if (GetKey(KeyCode::W) == true)
@@ -168,6 +167,11 @@ void Input::MoveKeyboard()
 			isJump = true;
 		}
 	}
+
+	if (isJump == true)
+		velocity = 12 * dt;
+	else
+		velocity = 20 * dt;
 }
 
 void Player::CheckForJump()

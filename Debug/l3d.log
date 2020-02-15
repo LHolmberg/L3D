@@ -1,18 +1,2 @@
-﻿  math.cpp
-C:\Users\Lukaz\Documents\GitHub\L3D\engine\math.h(28,20): warning C4244:  '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\L3D\engine\math.cpp(60,14): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\L3D\engine\math.cpp(70,19): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\L3D\engine\math.cpp(75,12): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\L3D\engine\math.cpp(119,19): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\L3D\engine\math.cpp(119,7): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\L3D\engine\math.cpp(118,18): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\L3D\engine\math.cpp(118,10): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\L3D\engine\math.cpp(129,18): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\L3D\engine\math.cpp(129,7): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\L3D\engine\math.cpp(127,15): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\L3D\engine\math.cpp(127,7): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\L3D\engine\math.cpp(139,16): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\L3D\engine\math.cpp(139,4): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\L3D\engine\math.cpp(138,15): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Lukaz\Documents\GitHub\L3D\engine\math.cpp(138,7): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+﻿  Source.cpp
   l3d.vcxproj -> C:\Users\Lukaz\Documents\GitHub\L3D\Debug\l3d.exe
