@@ -1,41 +1,41 @@
 #pragma once
 #include <iostream>
-#include "Shader.h"
-#include "TESTSAMPLEFILE.h"
-Window win;
-Shader shader;
-#define running !glfwWindowShouldClose(win.window)
+#include "GameObject.h"
+#include "Cube.h"
+#include "Skybox.h"
 
-namespace core
-{
+namespace core {
+	Window win;
+	GameObject go;
+	Skybox skybox;
+	Cube cube;
+
 	template<typename T>
-	void log(T in)
-	{
+	void log(T in) {
 		std::cout << in << std::endl;
 	}
 
-	void Startup()
-	{
+	void Startup() {
 		win.Startup(WIDTH, HEIGHT);
-		shader.Startup();
-		Game::Startup();
+		go.Startup();
+		cube.Startup();
+		skybox.Startup();
 	}
 
-	void Update()
-	{
+	void Update() {
 		win.Update();
-		shader.Update(win);
-		Game::Update();
+		cube.Render(win);
+		skybox.Render(win);
+
 		glfwPollEvents();
 		win.MoveKeyboard();
 
 		glfwSwapBuffers(win.window);
 	}
 
-	void Shutdown()
-	{
-		shader.Shutdown();
-		Game::Shutdown();
+	void Shutdown() {
+		skybox.Shutdown();
+
 		glfwTerminate();
 	}
 }

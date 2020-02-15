@@ -4,8 +4,7 @@
 
 namespace AI
 {
-	typedef struct StateMachine
-	{
+	typedef struct StateMachine {
 		std::map<std::string, void*>states;
 
 		void* activeState = NULL;

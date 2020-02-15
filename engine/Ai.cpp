@@ -1,15 +1,11 @@
 #include "Ai.h"
 
-namespace AI
-{
-	int StateMachine::AddState(std::string name, void* func)
-	{
-		if (states.find(name) != states.end())
-		{
+namespace AI {
+	int StateMachine::AddState(std::string name, void* func) {
+		if (states.find(name) != states.end()) {
 			return 0;
 		}
-		else
-		{
+		else {
 			std::pair<std::string, void*>pair(name, func);
 			states.insert(pair);
 			return -1;
@@ -18,9 +14,7 @@ namespace AI
 
 	int StateMachine::SetActiveState(std::string name, void* func)
 	{
-
-		if (states.find(name) != states.end())
-		{
+		if (states.find(name) != states.end()) {
 			activeState = func;
 			return 0;
 		}
@@ -28,22 +22,17 @@ namespace AI
 			return -1;
 	}
 
-	int StateMachine::Run(void* func)
-	{
+	int StateMachine::Run(void* func) {
 		if (activeState == NULL)
-		{
 			return -1;
-		}
-		else
-		{
+		else {
 			activeState = func;
 			return 0;
 		}
 
 	}
 
-	void StateMachine::Reset()
-	{
+	void StateMachine::Reset() {
 		activeState = NULL;
 	}
 }

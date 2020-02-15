@@ -1,13 +1,11 @@
-#include "core.h"
+#include "TESTSAMPLEFILE.h"
 
-int main() 
-{
-	
-	core::Startup();
+int main() {
+	Game::Startup();
+
 	while (running)
-	{
-		core::Update();
-	}
-	core::Shutdown();
+		Game::Update();
+
+	Game::Shutdown();
 	return 0;
 }

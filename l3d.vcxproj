@@ -140,19 +140,24 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine\Ai.cpp" />
+    <ClCompile Include="engine\Cube.cpp" />
     <ClCompile Include="engine\external\SOIL\stb_image_aug.c" />
     <ClCompile Include="engine\math.cpp" />
+    <ClCompile Include="engine\Skybox.cpp" />
     <ClCompile Include="engine\Source.cpp" />
-    <ClCompile Include="engine\Shader.cpp" />
+    <ClCompile Include="engine\GameObject.cpp" />
     <ClCompile Include="engine\User.cpp" />
     <ClCompile Include="engine\Random.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine\Ai.h" />
     <ClInclude Include="engine\core.h" />
+    <ClInclude Include="engine\Cube.h" />
     <ClInclude Include="engine\external\SOIL\stb_image_aug.h" />
+    <ClInclude Include="engine\GLpch.h" />
     <ClInclude Include="engine\math.h" />
-    <ClInclude Include="engine\Shader.h" />
+    <ClInclude Include="engine\GameObject.h" />
+    <ClInclude Include="engine\Skybox.h" />
     <ClInclude Include="engine\TESTSAMPLEFILE.h" />
     <ClInclude Include="engine\User.h" />
     <ClInclude Include="engine\Random.h" />

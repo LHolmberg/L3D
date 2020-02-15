@@ -2,24 +2,25 @@
 #include <iostream>
 #include "core.h"
 
-namespace Game
-{
-	//on update
-	void Update()
-	{
 
+
+namespace Game {
+
+	void Update() {
+		core::Update(); //CORE UPDATE
+		//GAME
 	}
 
-	//on startup
-	void Startup()
-	{
-
-
-
+	void Startup() {
+		core::Startup(); //CORE STARTUP
+		//GAME
+		
 	}
 
 	//on exit
-	void Shutdown()
-	{
+	void Shutdown() {
+		core::Shutdown(); //CORE SHUTDOWN
+		//GAME
+
 	}
 }
