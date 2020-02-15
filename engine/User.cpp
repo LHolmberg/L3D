@@ -125,7 +125,7 @@ void Player::CheckForJump() {
 	}
 }
 
-float Player::UpdateSpeed(float speed) { //Temporary fix for look down=slowmovement
+float Player::UpdateSpeed(float speed) { //Temporary fix for look down=slowmovement GOTTA GO
 	if (abs(pitch) > 48 && abs(pitch) < 57)
 		return speed + 7;
 	else if (abs(pitch) > 57 && abs(pitch) < 65)

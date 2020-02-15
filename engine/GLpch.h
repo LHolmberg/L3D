@@ -1,5 +1,6 @@
 #pragma once
 
 #define EXIT glfwSetWindowShouldClose(glfwGetCurrentContext(), 1)
-#define GETKEY(x) glfwGetKey(glfwGetCurrentContext(), x)
+template<typename T>
+constexpr auto GETKEY(T x) { return glfwGetKey(glfwGetCurrentContext(), x); }
 #define running !glfwWindowShouldClose(core::win.window)

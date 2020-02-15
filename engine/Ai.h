@@ -2,11 +2,10 @@
 #include <iostream>
 #include <map>
 
-namespace AI
-{
+namespace AI {
 	typedef struct StateMachine {
 		std::map<std::string, void*>states;
-
+		
 		void* activeState = NULL;
 
 		int AddState(std::string name, void* func);
