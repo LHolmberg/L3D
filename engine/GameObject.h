@@ -7,7 +7,7 @@
 #include <string>
 #include <sstream>
 
-#include "User.h"
+#include "Player.h"
 #include "Random.h"
 #include "math.h"
 #include "GLpch.h"

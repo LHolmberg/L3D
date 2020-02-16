@@ -18,14 +18,12 @@ void Cube::Instantiate(Math::Vector3 pos, Math::Vector3 scale, unsigned int text
 
 	glBindVertexArray(VAO);
 
-	model = Math::Translate(pos);
-	model.m[0][0] = scale.x; // scaling, tempfix
-	model.m[1][1] = scale.y;
-	model.m[2][2] = scale.z;
-	model.m[3][3] = 1;
+	model = Math::Translate(pos, model);
+	model = Math::Scale(scale, model);
+
 
 	glUniformMatrix4fv(modelLoc, 1, 0, modelPtr);
-
+	
 	glDrawArrays(GL_TRIANGLES, 0, 36);
 	glBindVertexArray(0);
 }

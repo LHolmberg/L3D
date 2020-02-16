@@ -147,24 +147,30 @@
   <ItemGroup>
     <ClCompile Include="engine\Ai.cpp" />
     <ClCompile Include="engine\Cube.cpp" />
+    <ClCompile Include="engine\Input.cpp" />
     <ClCompile Include="engine\math.cpp" />
+    <ClCompile Include="engine\Physics.cpp" />
+    <ClCompile Include="engine\Player.cpp" />
     <ClCompile Include="engine\Skybox.cpp" />
     <ClCompile Include="engine\Source.cpp" />
     <ClCompile Include="engine\GameObject.cpp" />
-    <ClCompile Include="engine\User.cpp" />
     <ClCompile Include="engine\Random.cpp" />
+    <ClCompile Include="engine\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine\Ai.h" />
     <ClInclude Include="engine\core.h" />
     <ClInclude Include="engine\Cube.h" />
     <ClInclude Include="engine\GLpch.h" />
+    <ClInclude Include="engine\Input.h" />
     <ClInclude Include="engine\math.h" />
     <ClInclude Include="engine\GameObject.h" />
+    <ClInclude Include="engine\Physics.h" />
+    <ClInclude Include="engine\Player.h" />
     <ClInclude Include="engine\Skybox.h" />
     <ClInclude Include="engine\TESTSAMPLEFILE.h" />
-    <ClInclude Include="engine\User.h" />
     <ClInclude Include="engine\Random.h" />
+    <ClInclude Include="engine\Window.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="engine\resources\images\bark.jpg" />

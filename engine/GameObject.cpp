@@ -45,11 +45,11 @@ unsigned int GameObject::CreateShader(std::string vShader, std::string fShader) 
 	unsigned int vertex, fragment;
 
 	vertex = glCreateShader(GL_VERTEX_SHADER);
-	glShaderSource(vertex, 1, &vertexCode, NULL);
+	glShaderSource(vertex, 1, &vertexCode, 0);
 	glCompileShader(vertex);
 
 	fragment = glCreateShader(GL_FRAGMENT_SHADER);
-	glShaderSource(fragment, 1, &fragmentCode, NULL);
+	glShaderSource(fragment, 1, &fragmentCode, 0);
 	glCompileShader(fragment);
 
 	this->program = glCreateProgram();

@@ -271,8 +271,8 @@ namespace Math {
 	Matrix4 RotateY(float t);
 	Matrix4 RotateZ(float t);
 
-	Matrix4 Translate(Vector3 t);
-	Matrix4 Scale(Vector3 s);
+	Matrix4 Translate(Vector3 t, Matrix4 m);
+	Matrix4 Scale(Vector3 s, Matrix4 m);
 	Matrix4 Perspective(float fov, float aspect_ratio, float near, float far);
 	Matrix4 To3x3(Matrix4 i);
 	Matrix4 lookAt(Vector3 from, Vector3 to, Vector3 up);

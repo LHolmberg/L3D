@@ -104,22 +104,22 @@ namespace Math
 		));
 	}
 
-	Matrix4 Translate(Vector3 t) {
+	Matrix4 Translate(Vector3 t, Matrix4 m) {
 		return(Matrix4
 		(
-			1, 0, 0, t.x,
-			0, 1, 0, t.y,
-			0, 0, 1, t.z,
-			0,0,0, 1
+			m.m[0][0], m.m[1][0], m.m[2][0], t.x,
+			m.m[0][1], m.m[1][1], m.m[2][1], t.y,
+			m.m[0][2], m.m[1][2], m.m[2][2], t.z,
+			m.m[0][3], m.m[1][3], m.m[2][3], m.m[3][3]
 		));
 	}
 
-	Matrix4 Scale(Vector3 s) {
+	Matrix4 Scale(Vector3 s, Matrix4 m) {
 		return(Matrix4(
-			s.x, 0, 0, 0,
-			0, s.y, 0, 0,
-			0, 0, s.z, 0,
-			0, 0, 0, 1
+			s.x, m.m[1][0], m.m[2][0], m.m[3][0],
+			m.m[0][1], s.y, m.m[2][1], m.m[3][1],
+			m.m[0][2], m.m[1][2], s.z, m.m[3][2],
+			m.m[0][3], m.m[1][3], m.m[2][3], 1
 		));
 	}
 

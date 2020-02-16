@@ -2,6 +2,7 @@
 #include <iostream>
 #include "GameObject.h"
 #include "Cube.h"
+#include "Window.h"
 #include "Skybox.h"
 #include <assert.h>
 

@@ -10,8 +10,12 @@ namespace Game {
 		engine::Update(); //CORE UPDATE
 		// GAME
 		
-		L3D::CreateCube(Math::Vector3(2, -5, 10), Math::Vector3(5, 24, 5), texture2);
-		L3D::CreateCube(Math::Vector3(10, -5, 20), Math::Vector3(5, 5, 5), texture2);
+		for (int i = 1; i <= 200 / 10; i++) {
+			L3D::CreateCube(Math::Vector3(100 - (i * 10), -5, 100), Math::Vector3(10, 10, 10), texture2);
+			L3D::CreateCube(Math::Vector3(100 - (i * 10), -5, -100), Math::Vector3(10, 10, 10), texture2);
+			L3D::CreateCube(Math::Vector3(100, -5, 100 - (i * 10)), Math::Vector3(10, 10, 10), texture2);
+		}
+
 		L3D::CreateCube(Math::Vector3(0, -10, 0), Math::Vector3(200, 1, 200), texture1);
 
 
