@@ -57,12 +57,12 @@ bool Player::CheckCollision(Math::Vector3 a, Math::Vector3 b, Math::Vector3 scal
 
 bool Input::GetKey(KeyCode k) {
 	switch (k) {
-		case KeyCode::W: return GETKEY(GLFW_KEY_W) == 1 ? true : false;
-		case KeyCode::A: return GETKEY(GLFW_KEY_A) == 1 ? true : false;
-		case KeyCode::S: return GETKEY(GLFW_KEY_S) == 1 ? true : false;
-		case KeyCode::D: return GETKEY(GLFW_KEY_D) == 1 ? true : false;
-		case KeyCode::ESCAPE: return GETKEY(GLFW_KEY_ESCAPE) == 1 ? true : false;
-		case KeyCode::SPACE: return GETKEY(GLFW_KEY_SPACE) == 1 ? true : false;
+		case KeyCode::W: return GETKEY(K_W) == 1 ? true : false;
+		case KeyCode::A: return GETKEY(K_A) == 1 ? true : false;
+		case KeyCode::S: return GETKEY(K_S) == 1 ? true : false;
+		case KeyCode::D: return GETKEY(K_D) == 1 ? true : false;
+		case KeyCode::ESCAPE: return GETKEY(K_ESC) == 1 ? true : false;
+		case KeyCode::SPACE: return GETKEY(K_SPACE) == 1 ? true : false;
 		default: return false;
 	}
 }
@@ -71,7 +71,7 @@ void Input::MoveKeyboard() {
 	float curTime = glfwGetTime();
 	dt = curTime - lastTime;
 
-	float newVel = UpdateSpeed(20) * dt;
+	float newVel = 20 * dt;
 	lastTime = curTime;
 
 	if (GetKey(KeyCode::W) == true) {
@@ -85,13 +85,13 @@ void Input::MoveKeyboard() {
 	}
 
 	if (GetKey(KeyCode::A) == true) {
-		position.x -= right.x * velocity;
-		position.z -= right.z * velocity;
+		position.x -= right.x * newVel;
+		position.z -= right.z * newVel;
 	}
 
 	if (GetKey(KeyCode::D) == true) {
-		position.x += right.x * velocity;
-		position.z += right.z * velocity;
+		position.x += right.x * newVel;
+		position.z += right.z * newVel;
 	}
 
 	if (GetKey(KeyCode::ESCAPE) == true)
@@ -123,31 +123,6 @@ void Player::CheckForJump() {
 			isJump = false;
 		}
 	}
-}
-
-float Player::UpdateSpeed(float speed) { //Temporary fix for look down=slowmovement GOTTA GO
-	if (abs(pitch) > 48 && abs(pitch) < 57)
-		return speed + 7;
-	else if (abs(pitch) > 57 && abs(pitch) < 65)
-		return speed + 19;
-	else if (abs(pitch) > 65 && abs(pitch) < 70)
-		return speed + 38;
-	else if (abs(pitch) > 70 && abs(pitch) < 75)
-		return speed + 49;
-	else if (abs(pitch) > 75 && abs(pitch) < 80)
-		return speed + 77;
-	else if (abs(pitch) > 80 && abs(pitch) < 83)
-		return speed + 129;
-	else if (abs(pitch) > 83 && abs(pitch) < 85)
-		return speed + 218;
-	else if (abs(pitch) > 85 && abs(pitch) < 87.6f)
-		return speed + 266;
-	else if (abs(pitch) > 87.6f && abs(pitch) < 88.5f)
-		return speed + 280;
-	else if (abs(pitch) > 88.5f)
-		return speed + 1000;
-	else
-		return 20;
 }
 
 void Input::MoveMouse(float xOffset, float yOffset, bool constraint) {

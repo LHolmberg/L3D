@@ -11,13 +11,12 @@
 #define WIDTH 1600
 #define HEIGHT 900
 
-class Player {
+class Player { // TODO  : Dela upp player i physics, core & camera
 public:
 	//physics
 	bool CheckCollision(Math::Vector3 a, Math::Vector3 b, Math::Vector3 scale);
 	void CheckForJump();
 	void HandleCollision();
-	float UpdateSpeed(float speed);
 
 	bool grounded;
 	int jumpcount = 100, speed = 20;

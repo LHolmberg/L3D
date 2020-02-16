@@ -1,20 +1,20 @@
 #include "Cube.h"
 
-void Cube::InstantiateCube(Math::Vector3 pos, Math::Vector3 scale, unsigned int texture) {
+void Cube::Instantiate(Math::Vector3 pos, Math::Vector3 scale, unsigned int texture) {
 	glUseProgram(cube);
 	void* mPtr = &model;
 	const float* modelPtr = (float*)mPtr;
 
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, texture);
-	glUniform1i(glGetUniformLocation(cube, "ourTexture1"), 0);
+	glUniform1i(glGetUniformLocation(cube, "txt"), 0);
 
 	GLint modelLoc = glGetUniformLocation(cube, "model");
 	GLint viewLoc = glGetUniformLocation(cube, "view");
 	GLint projLoc = glGetUniformLocation(cube, "projection");
 
-	glUniformMatrix4fv(viewLoc, 1, GL_FALSE, viewPtr);
-	glUniformMatrix4fv(projLoc, 1, GL_FALSE, projPtr);
+	glUniformMatrix4fv(viewLoc, 1, 0, viewPtr);
+	glUniformMatrix4fv(projLoc, 1, 0, projPtr);
 
 	glBindVertexArray(VAO);
 
@@ -24,7 +24,7 @@ void Cube::InstantiateCube(Math::Vector3 pos, Math::Vector3 scale, unsigned int 
 	model.m[2][2] = scale.z;
 	model.m[3][3] = 1;
 
-	glUniformMatrix4fv(modelLoc, 1, GL_FALSE, modelPtr);
+	glUniformMatrix4fv(modelLoc, 1, 0, modelPtr);
 
 	glDrawArrays(GL_TRIANGLES, 0, 36);
 	glBindVertexArray(0);
@@ -39,13 +39,9 @@ void Cube::Render(Player player) {
 
 	void* pPtr = &projection;
 	projPtr = (float*)pPtr;
-
-	InstantiateCube(Math::Vector3(2, -5, 10), Math::Vector3(5, 5, 5), textures[0]);
-	InstantiateCube(Math::Vector3(10, -5, 20), Math::Vector3(5, 5, 5), textures[0]);
-	InstantiateCube(Math::Vector3(0, -10, 0), Math::Vector3(200, 1, 200), textures[1]);
 }
 
-void Cube::InitializeCube(const char* path) {
+unsigned int Cube::Initialize(const char* path) {
 	unsigned int texture;
 	glGenVertexArrays(1, &VAO);
 	glGenBuffers(1, &VBO);
@@ -54,10 +50,10 @@ void Cube::InitializeCube(const char* path) {
 
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, 0, 5 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
 
-	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+	glVertexAttribPointer(2, 2, GL_FLOAT, 0, 5 * sizeof(float), (void*)(3 * sizeof(float)));
 	glEnableVertexAttribArray(2);
 	glBindVertexArray(0);
 
@@ -70,16 +66,15 @@ void Cube::InitializeCube(const char* path) {
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
 	int width, height;
-	unsigned char* image = SOIL_load_image(path, &width, &height, 0, SOIL_LOAD_RGB);
+	unsigned char* image = SOIL_load_image(path, &width, &height, 0, 3);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
 	glGenerateMipmap(GL_TEXTURE_2D);
 	SOIL_free_image_data(image);
 	glBindTexture(GL_TEXTURE_2D, 0);
-	textures.push_back(texture);
+
+	return texture;
 }
 
 void Cube::Startup() {
-	cube = CreateShader("engine/shaders/core.vs", "engine/shaders/core.frag");
-	InitializeCube("engine/shaders/Png.png");
-	InitializeCube("engine/shaders/grass.jpg");
+	cube = CreateShader("engine/resources/shaders/core.vs", "engine/resources/shaders/core.frag");
 }

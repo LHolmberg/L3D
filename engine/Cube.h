@@ -6,9 +6,8 @@ public:
 	void Startup();
 	void Render(Player player);
 
-	std::vector<unsigned int> textures;
-	void InstantiateCube(Math::Vector3 pos, Math::Vector3 scale, unsigned int texture);
-	void InitializeCube(const char* path);
+	void Instantiate(Math::Vector3 pos, Math::Vector3 scale, unsigned int texture);
+	unsigned int Initialize(const char* path);
 
 	unsigned int VAO, VBO, cube;
 

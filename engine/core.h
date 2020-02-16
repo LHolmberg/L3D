@@ -3,18 +3,28 @@
 #include "GameObject.h"
 #include "Cube.h"
 #include "Skybox.h"
+#include <assert.h>
 
-namespace core {
-	Window win;
-	GameObject go;
-	Skybox skybox;
-	Cube cube;
+Window win;
+GameObject go;
+Skybox skybox;
+Cube cube;
 
-	template<typename T>
-	void log(T in) {
-		std::cout << in << std::endl;
+//Simplified user expressions
+namespace L3D {
+	typedef unsigned int TEXTURE;
+
+	auto CreateCube(Math::Vector3 position, Math::Vector3 scale, unsigned int texture) {
+		return cube.Instantiate(position, scale, texture);
 	}
 
+	auto CreateTexture(const char* filename) {
+		return cube.Initialize(filename);
+	}
+}
+
+// Core setup/update
+namespace engine {
 	void Startup() {
 		win.Startup(WIDTH, HEIGHT);
 		go.Startup();
@@ -26,16 +36,12 @@ namespace core {
 		win.Update();
 		cube.Render(win);
 		skybox.Render(win);
-
 		glfwPollEvents();
 		win.MoveKeyboard();
-
-		glfwSwapBuffers(win.window);
 	}
 
 	void Shutdown() {
 		skybox.Shutdown();
-
 		glfwTerminate();
 	}
 }

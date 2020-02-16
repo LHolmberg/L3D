@@ -27,7 +27,7 @@ unsigned int GameObject::CreateShader(std::string vShader, std::string fShader) 
 	std::ifstream fStream(fShader, std::ios::in);
 
 	if (!fStream.is_open()) {
-		std::cout << "FEL - > " << fShader;
+		std::cout << "ERROR - > " << fShader;
 		return 0;
 	}
 

@@ -128,6 +128,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="engine\resources\shaders\core.frag" />
+    <None Include="engine\resources\shaders\core.vs" />
+    <None Include="engine\resources\shaders\modelLoading.frag" />
+    <None Include="engine\resources\shaders\modelLoading.vs" />
+    <None Include="engine\resources\shaders\skybox.frag" />
+    <None Include="engine\resources\shaders\skybox.vs" />
     <None Include="engine\shaders\core.frag" />
     <None Include="engine\shaders\core.vs" />
     <None Include="engine\shaders\modelLoading.frag" />
@@ -141,7 +147,6 @@
   <ItemGroup>
     <ClCompile Include="engine\Ai.cpp" />
     <ClCompile Include="engine\Cube.cpp" />
-    <ClCompile Include="engine\external\SOIL\stb_image_aug.c" />
     <ClCompile Include="engine\math.cpp" />
     <ClCompile Include="engine\Skybox.cpp" />
     <ClCompile Include="engine\Source.cpp" />
@@ -153,7 +158,6 @@
     <ClInclude Include="engine\Ai.h" />
     <ClInclude Include="engine\core.h" />
     <ClInclude Include="engine\Cube.h" />
-    <ClInclude Include="engine\external\SOIL\stb_image_aug.h" />
     <ClInclude Include="engine\GLpch.h" />
     <ClInclude Include="engine\math.h" />
     <ClInclude Include="engine\GameObject.h" />
@@ -163,6 +167,10 @@
     <ClInclude Include="engine\Random.h" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="engine\resources\images\bark.jpg" />
+    <Image Include="engine\resources\images\grass.jpg" />
+    <Image Include="engine\resources\images\Png.png" />
+    <Image Include="engine\resources\images\s.jpg" />
     <Image Include="engine\shaders\bark.jpg" />
     <Image Include="engine\shaders\grass.jpg" />
     <Image Include="engine\shaders\PaintFlaking_0324.jpg" />

@@ -1,6 +1,7 @@
 # 3D Game Engine
 
 # TODO
-- Render graphics in USERFILE.h
 - Physics engine
+- .obj loader
+
 - General code cleanup
