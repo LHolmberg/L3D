@@ -12,7 +12,7 @@ int Window::Startup(const unsigned int width, const unsigned int height) { //set
 
 	SetVersion(3);
 
-	window = glfwCreateWindow(width, height, "L3D", nullptr, nullptr);
+	window = glfwCreateWindow(width, height, "L3D", 0, 0);
 
 	if (!window) {
 		std::cout << "glfw init fail" << std::endl;

@@ -22,22 +22,34 @@ void Input::MoveKeyboard() {
 	if (GetKey(KeyCode::W) == true) {
 		position.x += lForward.x * newVel;
 		position.z += lForward.z * newVel;
+		movingForward = true;
 	}
+	else
+		movingForward = false;
 
 	if (GetKey(KeyCode::S) == true) {
 		position.x -= lForward.x * newVel;
 		position.z -= lForward.z * newVel;
+		movingBack = true;
 	}
+	else
+		movingBack = false;
 
 	if (GetKey(KeyCode::A) == true) {
 		position.x -= right.x * newVel;
 		position.z -= right.z * newVel;
+		movingLeft = true;
 	}
+	else
+		movingLeft = false;
 
 	if (GetKey(KeyCode::D) == true) {
 		position.x += right.x * newVel;
 		position.z += right.z * newVel;
+		movingRight = true;
 	}
+	else
+		movingRight = false;
 
 	if (GetKey(KeyCode::ESCAPE) == true)
 		EXIT;

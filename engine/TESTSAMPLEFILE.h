@@ -15,10 +15,11 @@ namespace Game {
 			L3D::CreateCube(Math::Vector3(100 - (i * 10), -5, -100), Math::Vector3(10, 10, 10), texture2);
 			L3D::CreateCube(Math::Vector3(100, -5, 100 - (i * 10)), Math::Vector3(10, 10, 10), texture2);
 		}
-
-		L3D::CreateCube(Math::Vector3(0, -10, 0), Math::Vector3(200, 1, 200), texture1);
-
-
+		
+		for (int j = 0; j < 20; j++) {
+			for (int i = 0; i < 20; i++)
+				L3D::CreateCube(Math::Vector3(100 - (i * 10), -10, 100-(j*10)), Math::Vector3(10, 1, 10), texture1);
+		}
 
 		SWAP_BUFFERS;
 	}

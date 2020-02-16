@@ -21,6 +21,7 @@ public:
 	int jumpcount = 100;
 	bool isJump = false, collided, grounded;
 	float velocity, dt, lastTime;
+	bool movingForward, movingLeft, movingRight, movingBack;
 
 	//camera
 	Math::Matrix4 GetView();
