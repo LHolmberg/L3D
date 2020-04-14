@@ -23,7 +23,7 @@ public:
 	float velocity, dt, lastTime;
 	bool movingForward, movingLeft, movingRight, movingBack;
 
-	//camera
+	//camera stuff
 	Math::Matrix4 GetView();
 	Math::Vector3 position = Math::Vector3(0, 100, 0);
 	Math::Vector3 worldUp = Math::Vector3(0, 1, 0);
